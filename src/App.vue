@@ -2,7 +2,7 @@
   <div>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
-        <h2>Second 1</h2>
+        <Welcome />
       </div>
       <div class="section">
         <h2>Second 2</h2>
@@ -15,18 +15,26 @@
 </template>
 
 <script>
+import Welcome from "./components/Welcome.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { Welcome },
   data() {
     return {
       options: {
+        afterLoad: this.afterLoad,
         menu: "#menu",
         anchors: ["page1", "page2", "page3"],
-        sectionsColor: ["#41b883", "#ff5f45", "#0798ec"]
-      }
+        sectionsColor: ["#41b883", "#ff5f45", "#0798ec"],
+      },
     };
-  }
+  },
+  methods: {
+    afterLoad() {
+      console.log('After load')
+    },
+  },
 };
 </script>
 <style>
@@ -34,7 +42,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.section{
+.section {
   text-align: center;
   color: aliceblue;
 }
