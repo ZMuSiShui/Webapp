@@ -23,21 +23,17 @@ export default {
   data() {
     return {
       options: {
-        afterLoad: this.afterLoad,
         menu: "#menu",
+        navigation: true,
         anchors: ["page1", "page2", "page3"],
-        sectionsColor: ["#41b883", "#ff5f45", "#0798ec"],
+        // sectionsColor: ["#41b883", "#ff5f45", "#0798ec"],
       },
     };
-  },
-  methods: {
-    afterLoad() {
-      console.log('After load')
-    },
   },
 };
 </script>
 <style>
+@import url(https://unpkg.com/fullpage.js/dist/fullpage.min.css);
 * {
   margin: 0;
   padding: 0;

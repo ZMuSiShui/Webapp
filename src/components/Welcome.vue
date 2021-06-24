@@ -1,9 +1,502 @@
 <template>
-  <h2>Second 1</h2>
+  <div id="wrapper">
+    <section id="main">
+      <header>
+        <span class="avatar">
+          <a href="https://blog.zhangjie.me">
+            <img src="../assets/logo.png" width="118px" height="118px" />
+          </a>
+        </span>
+        <a href="https://blog.zhangjie.me">
+          <h1>JieのBlog</h1>
+        </a>
+        <div class="social">
+          <a target="_blank" href="mailto:zhangjieepic@gmail.com" class="mail">
+            <i class="icon-mail"></i>
+          </a>
+          <a target="_blank" href="https://github.com/ZMuSiShui" class="github">
+            <i class="icon-github"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://twitter.com/ZMuSiShui"
+            class="twitter"
+          >
+            <i class="icon-twitter"></i>
+          </a>
+        </div>
+        <p style="margin-top: 10px">七情拆解，无非心印；六欲所指，皆由心生。</p>
+      </header>
+      <footer id="footer">
+        <ul class="copyright">
+          <li>© since 2021</li>
+          <li>
+            by
+            <a href="https://github.com/ZMuSiShui">MuSiShui</a>
+          </li>
+        </ul>
+      </footer>
+    </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Welcome",
+  props: {
+    hitokoto: {
+      word: "",
+      author: ""
+    }
+  }
 };
 </script>
+<style>
+@charset "UTF-8";
+
+/*
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Reset */
+a {
+  text-decoration: none;
+}
+
+div,
+span,
+h1,
+p,
+a,
+img,
+i,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Box Model */
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  -moz-transition: color 0.2s ease, border-color 0.2s ease;
+  -webkit-transition: color 0.2s ease, border-color 0.2s ease;
+  -ms-transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  color: inherit;
+  /*color: red;*/
+  text-decoration: none;
+}
+
+a:before {
+  -moz-transition: color 0.2s ease, text-shadow 0.2s ease;
+  -webkit-transition: color 0.2s ease, text-shadow 0.2s ease;
+  -ms-transition: color 0.2s ease, text-shadow 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: #ff7496;
+}
+
+i {
+  font-style: italic;
+}
+
+p {
+  margin: 0 0 1.5em 0;
+}
+
+h1 {
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0 0 0.75em 0;
+}
+
+h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.85em;
+  /** 增加或减少单词间的空白(即字间隔)*/
+  /*letter-spacing: 0.22em;*/
+  margin: 0 0 0.525em 0;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.65em;
+  }
+}
+
+/* Main */
+
+#main {
+  position: relative;
+  max-width: 100%;
+  min-width: 27em;
+  padding: 4.5em 3em 10em 3em;
+  border-radius: 4px;
+  cursor: default;
+  opacity: 0.95;
+  text-align: center;
+  -moz-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -moz-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  color: #ffffff;
+}
+
+#main .avatar {
+  position: relative;
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+#main .avatar img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: 2px solid #fff;
+}
+
+#main .avatar:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -3em;
+  width: calc(100% + 6em);
+  height: 1px;
+  z-index: -1;
+  background: #c8cccf;
+}
+
+@media screen and (max-width: 480px) {
+  #main {
+    min-width: 0;
+    width: 100%;
+    padding: 4em 2em 2.5em 2em;
+  }
+
+  #main .avatar:before {
+    left: -2em;
+    width: calc(100% + 4em);
+  }
+}
+
+body.is-loading #main {
+  opacity: 0;
+  -moz-transform: rotateX(15deg);
+  -webkit-transform: rotateX(15deg);
+  -ms-transform: rotateX(15deg);
+  transform: rotateX(15deg);
+}
+
+/* Footer */
+
+#footer {
+  -moz-align-self: -moz-flex-end;
+  -webkit-align-self: -webkit-flex-end;
+  -ms-align-self: -ms-flex-end;
+  align-self: flex-end;
+  width: 100%;
+  padding: 1.5em 0 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: default;
+  text-align: center;
+}
+
+#footer .copyright {
+  padding: 0;
+  font-size: 0.9em;
+  list-style: none;
+}
+
+#footer .copyright li {
+  display: inline-block;
+  margin: 0 0 0 0.45em;
+  padding: 0 0 0 0.85em;
+  border-left: solid 1px rgba(255, 255, 255, 0.5);
+  line-height: 1;
+}
+
+#footer .copyright li:first-child {
+  border-left: 0;
+}
+
+/* Wrapper */
+
+#wrapper {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  position: relative;
+  min-height: 100%;
+  padding: 1.5em;
+  z-index: 2;
+  background-image: url(../assets/bg.jpg);
+  background-size: 100% 100%;
+}
+
+#wrapper > * {
+  z-index: 1;
+}
+
+#wrapper:before {
+  content: "";
+  display: block;
+}
+
+@media screen and (max-width: 360px) {
+  #wrapper {
+    padding: 0.75em;
+  }
+}
+
+body.is-ie #wrapper {
+  height: 100%;
+}
+
+/***********************************/
+/*social*/
+
+.social {
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.social a {
+  border-radius: 50%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0 8px 15px 8px;
+  transition: 0.3s;
+  text-align: center;
+  color: #fff;
+  opacity: 0.7;
+  width: 28px;
+  height: 28px;
+  line-height: 26px;
+}
+.social a:hover {
+  opacity: 1;
+}
+.social a.github {
+  background: #afb6ca;
+  border: 1px solid #afb6ca;
+}
+.social a.github:hover {
+  border: 1px solid #909ab6;
+}
+.social a.facebook {
+  background: #3b5998;
+  border: 1px solid #3b5998;
+}
+.social a.facebook:hover {
+  border: 1px solid #2d4373;
+}
+.social a.google {
+  background: #c83d20;
+  border: 1px solid #c83d20;
+}
+.social a.google:hover {
+  border: 1px solid #9c3019;
+}
+.social a.twitter {
+  background: #55cff8;
+  border: 1px solid #55cff8;
+}
+.social a.twitter:hover {
+  border: 1px solid #24c1f6;
+}
+.social a.bilibili {
+  background: #e15280;
+  border: 1px solid #e15280;
+}
+.social a.bilibili:hover {
+  border: 1px solid #e15280;
+}
+.social a.zhihu {
+  background: #0078d8;
+  border: 1px solid #0078d8;
+}
+.social a.zhihu:hover {
+  border: 1px solid #0078d8;
+}
+.social a.mail {
+  background: #005a87;
+  border: 1px solid #005a87;
+}
+.social a.mail:hover {
+  border: 1px solid #006b98;
+}
+.social a.psn {
+  background: #086ef6;
+  border: 1px solid #086ef6;
+}
+.social a.psn:hover {
+  border: 1px solid #086ef6;
+}
+
+/***********************************/
+
+/***********************************/
+/*fonts*/
+@font-face {
+  font-family: "iconfont";
+  src: url("./fonts/iconfont.eot");
+  /* IE9*/
+  src: url("./fonts/iconfont.eot#iefix") format("embedded-opentype"),
+    url("./fonts/iconfont.woff") format("woff"),
+    url("./fonts/iconfont.ttf") format("truetype"),
+    url("./fonts/iconfont.svg#iconfont") format("svg");
+  /* iOS 4.1- */
+}
+@font-face {
+  font-family: "head";
+  src: url("./fonts/head.ttf");
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.author {
+  text-align: center;
+  margin: 0.67em 0;
+  font-family: "head", "Roboto", serif;
+  font-size: 32px;
+  transition: 0.3s;
+}
+
+.icon-twitter:before {
+  content: "\e600";
+}
+
+.icon-facebook:before {
+  content: "\e601";
+}
+
+.icon-mail:before {
+  content: "\e609";
+}
+
+.icon-home:before {
+  content: "\e6bb";
+}
+
+.icon-share:before {
+  content: "\e618";
+}
+
+.icon-back:before {
+  content: "\e625";
+}
+
+.icon-github:before {
+  content: "\e735";
+}
+
+.icon-google:before {
+  content: "\e635";
+}
+
+.icon-psn:before {
+  content: "\e6c7";
+}
+/***********************************/
+
+#wrapper {
+  margin: auto;
+}
+
+#main {
+  margin: auto;
+}
+
+.img-alt {
+  display: block;
+  margin: 0 auto;
+  width: 118px;
+  height: 118px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+}
+</style>
