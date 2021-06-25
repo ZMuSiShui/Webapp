@@ -8,7 +8,7 @@
           </a>
         </span>
         <a href="https://blog.zhangjie.me">
-          <h1>MuSiShui</h1>
+          <h1 style="color: #ffffff">MuSiShui</h1>
         </a>
         <div class="social">
           <a target="_blank" href="mailto:zhangjieepic@gmail.com" class="mail">
@@ -32,7 +32,7 @@
           <li>© since 2021</li>
           <li>
             by
-            <a href="https://github.com/ZMuSiShui">MuSiShui</a>
+            <a href="https://github.com/ZMuSiShui" style="color: #ffffff">MuSiShui</a>
           </li>
         </ul>
       </footer>
