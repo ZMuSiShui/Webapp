@@ -5,7 +5,7 @@
         <Welcome />
       </div>
       <div class="section">
-        <h2>Second 2</h2>
+        <Winnav />
       </div>
       <div class="section">
         <h2>Second 3</h2>
@@ -16,10 +16,14 @@
 
 <script>
 import Welcome from "./components/Welcome.vue";
+import Winnav from "./components/Winnav.vue"
 
 export default {
   name: "App",
-  components: { Welcome },
+  components: { 
+    Welcome,
+    Winnav
+    },
   data() {
     return {
       options: {
