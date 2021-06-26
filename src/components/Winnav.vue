@@ -1,53 +1,17 @@
 <template>
   <div class="bg-dark fg-white h-vh-100 m4-cloak" ref="divGenres">
     <div class="container-fluid start-screen h-100">
-      <h1 class="start-screen-title">Start</h1>
-      <div class="tiles-area clear" ref="tiles">
+      <h1 class="start-screen-title">我的收藏</h1>
+      <div class="clear" :style="{tileArea}">
         <div
           class="tiles-grid tiles-group size-2 fg-white"
-          data-group-title="General"
+          data-group-title="编程文档"
         >
-          <a
-            href="https://github.com/olton/Metro-UI-CSS"
-            data-role="tile"
-            class="bg-indigo fg-white tile-medium"
-          >
-            <span class="mif-github icon"></span>
-            <span class="branding-bar">Github</span>
-            <span class="badge-bottom">30</span>
-          </a>
-          <div data-role="tile" class="bg-cyan fg-white">
-            <span class="mif-envelop icon"></span>
-            <span class="branding-bar">Email</span>
-            <span class="badge-bottom">10</span>
-          </div>
-          <div data-role="tile" class="bg-orange fg-white" data-size="wide">
-            <span class="mif-chrome icon"></span>
-            <span class="branding-bar">Chrome</span>
-          </div>
-          <div data-role="tile" data-size="small">
-            <span class="mif-apple icon"></span>
-          </div>
-          <div data-role="tile" data-size="small" class="bg-red fg-white">
-            <span class="mif-bell icon"></span>
-          </div>
-          <div
-            data-role="tile"
-            data-size="small"
-            class="bg-teal fg-white col-1 row-6"
-          >
-            <span class="mif-windows icon"></span>
-          </div>
-          <div
-            data-role="tile"
-            data-size="small"
-            class="bg-brown fg-white col-2 row-6"
-          >
-            <span class="mif-wind icon"></span>
-          </div>
-          <div data-role="tile" class="bg-cyan fg-white">
-            <span class="mif-table icon"></span>
-            <span class="branding-bar">Tables</span>
+          <div v-for="item in front" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
+            <a :href="item.url">
+              <img :src="item.imgSrc" />
+            </a>
+            <span class="branding-bar" v-if="item.desc">{{ item.desc }}</span>
           </div>
         </div>
         <div
@@ -81,11 +45,11 @@
           </div>
           <div data-role="tile" data-size="wide" data-effect="image-set">
             <img src="../assets/images/bg.jpg"/>
-            <!-- <img src="../assets/images/jeki_chan.jpg" />
+            <img src="../assets/images/jeki_chan.jpg" />
             <img src="../assets/images/shvarcenegger.jpg" />
             <img src="../assets/images/vin_d.jpg" />
             <img src="../assets/images/jolie.jpg" />
-            <img src="../assets/images/jek_vorobey.jpg" /> -->
+            <img src="../assets/images/jek_vorobey.jpg" />
           </div>
         </div>
         <div
@@ -95,16 +59,16 @@
           <div data-role="tile" data-size="small">
             <img src="../assets/images/outlook.png" class="icon" />
           </div>
-          <div data-role="tile" data-size="small" class="bg-brown">
+          <div data-role="tile" data-size="small">
             <img src="../assets/images/word.png" class="icon" />
           </div>
-          <div data-role="tile" data-size="small" class="bg-green">
+          <div data-role="tile" data-size="small">
             <img src="../assets/images/excel.png" class="icon" />
           </div>
-          <div data-role="tile" data-size="small" class="bg-red">
+          <div data-role="tile" data-size="small">
             <img src="../assets/images/access.png" class="icon" />
           </div>
-          <div data-role="tile" data-size="small" class="bg-teal">
+          <div data-role="tile" data-size="small">
             <img src="../assets/images/powerpoint.png" class="icon" />
           </div>
         </div>
@@ -118,7 +82,7 @@
           >
             <span class="branding-bar">Battlefield 4</span>
           </div>
-          <div data-role="tile" class="bg-green">
+          <div data-role="tile">
             <img src="../assets/images/x-box.png" class="icon" />
             <span class="branding-bar">XBOX ONE</span>
           </div>
@@ -141,6 +105,58 @@ export default {
   data() {
     return {
       tileAreaWidth: 80,
+      tileArea: {
+        width: 1750
+      },
+      front: [
+        {
+          size: "medium",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: "VueJS"
+        },{
+          size: "medium",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: "VueJS"
+        },{
+          size: "medium",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: "VueJS"
+        },{
+          size: "small",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: false
+        },{
+          size: "small",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: false
+        },{
+          size: "small",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: false
+        },{
+          size: "small",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: false
+        },{
+          size: "medium",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: "VueJS"
+        },{
+          size: "medium",
+          url: "https://cn.vuejs.org/",
+          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
+          desc: "VueJS"
+        },
+      ]
+
     };
   },
   beforeCreate() {
@@ -171,16 +187,7 @@ export default {
         }
       });
 
-      this.$refs.divGenres.querySelector(".tiles-area").css({
-        width: this.tileAreaWidth,
-      });
-
-      // eslint-disable-next-line
-      if (width > Metro.media_sizes.LD) {
-        this.$refs.divGenres.querySelectorAll(".start-screen").css({
-          overflow: "auto",
-        });
-      }
+      this.tileArea.width = this.tileAreaWidth
     },
   },
 };
@@ -193,7 +200,6 @@ export default {
   padding-bottom: 20px;
 }
 .start-screen-title {
-  position: fixed;
   top: 20px;
   left: 80px;
   display: none;
@@ -221,5 +227,8 @@ export default {
   .tiles-group {
     margin-left: 80px;
   }
+}
+.bg-dark {
+  background-color: #1d1d1d !important;
 }
 </style>

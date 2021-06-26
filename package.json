@@ -10,9 +10,10 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "hevue-img-preview": "^5.0.0",
+    "metro4": "^4.4.3",
     "vue": "^2.6.10",
     "vue-fullpage.js": "^0.1.2",
-    "vue-metro-tile": "^1.0.6"
+    "vue-svg-loader": "^0.16.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.0",
