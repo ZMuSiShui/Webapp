@@ -45,6 +45,4 @@ export default {
   name: "Welcome",
 };
 </script>
-<style>
-@import "../assets/style/Welcome.css"
-</style>
+<style src="../assets/style/Welcome.css" scoped></style>

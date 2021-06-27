@@ -5,94 +5,42 @@
       <div class="clear" :style="{tileArea}">
         <div
           class="tiles-grid tiles-group size-2 fg-white"
-          data-group-title="编程文档"
+          data-group-title="学习文档"
         >
-          <div v-for="item in front" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
+          <div v-for="item in docs" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
             <a :href="item.url">
-              <img :src="item.imgSrc" />
+              <img :src="item.imgSrc"/>
             </a>
-            <span class="branding-bar" v-if="item.desc">{{ item.desc }}</span>
           </div>
         </div>
         <div
           class="tiles-grid tiles-group size-2 fg-white"
-          data-group-title="Images"
+          data-group-title="学习平台"
         >
-          <div data-role="tile" data-cover="../assets/images/me.jpg">
-            <span class="branding-bar">Sergey Pimenov</span>
-          </div>
-          <div
-            data-role="tile"
-            data-effect="animate-fade"
-            data-effect-duration="1000"
-          >
-            <div class="slide" data-cover="../assets/images/me2.jpg"></div>
-            <div class="slide" data-cover="../assets/images/me.jpg"></div>
-            <div class="slide" data-cover="../assets/images/me3.jpg"></div>
-            <span class="branding-bar">Gallery</span>
-          </div>
-          <div
-            data-role="tile"
-            data-size="wide"
-            data-effect="animate-slide-left"
-          >
-            <div class="slide" data-cover="../assets/images/1.jpg"></div>
-            <div class="slide" data-cover="../assets/images/2.jpg"></div>
-            <div class="slide" data-cover="../assets/images/3.jpg"></div>
-            <div class="slide" data-cover="../assets/images/4.jpg"></div>
-            <div class="slide" data-cover="../assets/images/5.jpg"></div>
-            <span class="branding-bar">Gallery</span>
-          </div>
-          <div data-role="tile" data-size="wide" data-effect="image-set">
-            <img src="../assets/images/bg.jpg"/>
-            <img src="../assets/images/jeki_chan.jpg" />
-            <img src="../assets/images/shvarcenegger.jpg" />
-            <img src="../assets/images/vin_d.jpg" />
-            <img src="../assets/images/jolie.jpg" />
-            <img src="../assets/images/jek_vorobey.jpg" />
+          <div v-for="item in learn" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
+            <a :href="item.url">
+              <img :src="item.imgSrc"/>
+            </a>
           </div>
         </div>
         <div
           class="tiles-grid tiles-group size-1 fg-white"
-          data-group-title="Office"
+          data-group-title="常用软件"
         >
-          <div data-role="tile" data-size="small">
-            <img src="../assets/images/outlook.png" class="icon" />
-          </div>
-          <div data-role="tile" data-size="small">
-            <img src="../assets/images/word.png" class="icon" />
-          </div>
-          <div data-role="tile" data-size="small">
-            <img src="../assets/images/excel.png" class="icon" />
-          </div>
-          <div data-role="tile" data-size="small">
-            <img src="../assets/images/access.png" class="icon" />
-          </div>
-          <div data-role="tile" data-size="small">
-            <img src="../assets/images/powerpoint.png" class="icon" />
+          <div v-for="item in software" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
+            <a :href="item.url">
+              <img :src="item.imgSrc"/>
+            </a>
           </div>
         </div>
         <div
           class="tiles-grid tiles-group size-2 fg-white"
-          data-group-title="Games"
+          data-group-title="~（￣▽￣）~ 摸鱼"
         >
-          <div
-            data-role="tile"
-            data-cover="../assets/images/Battlefield_4_Icon.png"
-          >
-            <span class="branding-bar">Battlefield 4</span>
-          </div>
-          <div data-role="tile">
-            <img src="../assets/images/x-box.png" class="icon" />
-            <span class="branding-bar">XBOX ONE</span>
-          </div>
-          <div
-            data-role="tile"
-            data-size="wide"
-            data-cover="../assets/images/x-box.png"
-          >
-            <span class="branding-bar">XBOX LIVE</span>
-            <span class="badge-top">5</span>
+          <div v-for="item in moyu" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
+            <a :href="item.url">
+              <img :src="item.imgSrc"/>
+            </a>
           </div>
         </div>
       </div>
@@ -108,55 +56,110 @@ export default {
       tileArea: {
         width: 1750
       },
-      front: [
+      docs: [
         {
           size: "medium",
           url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: "VueJS"
+          imgSrc: "./images/doc/VueJS.png"
         },{
           size: "medium",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: "VueJS"
+          url: "https://docs.python.org/zh-cn/3/",
+          imgSrc: "./images/doc/Python.png"
         },{
           size: "medium",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: "VueJS"
+          url: "https://go-zh.org/doc/",
+          imgSrc: "./images/doc/Go.png"
         },{
           size: "small",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: false
+          url: "https://developer.mozilla.org/zh-CN/",
+          imgSrc: "./images/doc/MDN.png"
         },{
           size: "small",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: false
+          url: "https://fastapi.tiangolo.com/zh/",
+          imgSrc: "./images/doc/FastAPI.png"
         },{
           size: "small",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: false
+          url: "https://element-plus.gitee.io/",
+          imgSrc: "./images/doc/element-ui.png"
         },{
           size: "small",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: false
+          url: "https://panjiachen.github.io/vue-element-admin-site/zh/",
+          imgSrc: "./images/doc/vue-element-admin.png"
         },{
           size: "medium",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: "VueJS"
+          url: "https://www.docker.org.cn/",
+          imgSrc: "./images/doc/Docker.png"
         },{
           size: "medium",
-          url: "https://cn.vuejs.org/",
-          imgSrc: "https://vuejs.bootcss.com/images/logo.png",
-          desc: "VueJS"
+          url: "https://man.linuxde.net/",
+          imgSrc: "./images/doc/Linux.png"
         },
+      ],
+      learn:[
+        {
+          size: "medium",
+          url: "https://github.com/",
+          imgSrc: "./images/learn/Github.png"
+        },{
+          size: "medium",
+          url: "https://www.runoob.com/",
+          imgSrc: "./images/learn/runoob.png"
+        },{
+          size: "medium",
+          url: "https://www.csdn.net/",
+          imgSrc: "./images/learn/CSDN.png"
+        },{
+          size: "medium",
+          url: "https://juejin.cn/",
+          imgSrc: "./images/learn/juejin.png"
+        },{
+          size: "wide",
+          url: "https://www.bookstack.cn/",
+          imgSrc: "./images/learn/bookstack.png"
+        },
+      ],
+      software: [
+        {
+          size: "small",
+          url: "https://download.sysinternals.com/files/DebugView.zip",
+          imgSrc: "./images/software/debugview.png"
+        },{
+          size: "small",
+          url: "https://download.sysinternals.com/files/ProcessExplorer.zip",
+          imgSrc: "./images/software/Procexp.png"
+        },{
+          size: "small",
+          url: "http://www.kelai.com.cn/download/csnas_tech_13.5.0.13528_x64.rar",
+          imgSrc: "./images/software/cola.png"
+        },{
+          size: "small",
+          url: "https://dl.softmgr.qq.com/original/System/Wireshark-win64-3.4.6.exe",
+          imgSrc: "./images/software/wireshark.png"
+        },
+      ],
+      moyu: [
+        {
+          size: "medium",
+          url: "https://www.bilibili.com",
+          imgSrc: "./images/moyu/bilibili.png"
+        },{
+          size: "medium",
+          url: "https://www.twitter.com",
+          imgSrc: "./images/moyu/twitter.png"
+        },{
+          size: "medium",
+          url: "https://music.youtube.com",
+          imgSrc: "./images/moyu/youtubemusic.png"
+        },{
+          size: "medium",
+          url: "https://bbs.mihoyo.com/ys/strategy/",
+          imgSrc: "./images/moyu/Genshin_Impact.jpg"
+        },{
+          size: "wide",
+          url: "https://3dmgame.com",
+          imgSrc: "./images/moyu/3dmgame.png"
+        }
       ]
-
     };
   },
   beforeCreate() {
@@ -192,7 +195,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .start-screen {
   min-width: 100%;
   height: 100%;
@@ -231,4 +234,8 @@ export default {
 .bg-dark {
   background-color: #1d1d1d !important;
 }
+.bg-white {
+  background-color: #ffffff !important;
+}
 </style>
+<style src='../assets/style/metro.min.css' scoped></style>
