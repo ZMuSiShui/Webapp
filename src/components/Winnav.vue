@@ -8,7 +8,7 @@
           data-group-title="学习文档"
         >
           <div v-for="item in docs" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
-            <a :href="item.url">
+            <a :href="item.url" target="_blank">
               <img :src="item.imgSrc"/>
             </a>
           </div>
@@ -18,7 +18,7 @@
           data-group-title="学习平台"
         >
           <div v-for="item in learn" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
-            <a :href="item.url">
+            <a :href="item.url" target="_blank">
               <img :src="item.imgSrc"/>
             </a>
           </div>
@@ -28,7 +28,7 @@
           data-group-title="常用软件"
         >
           <div v-for="item in software" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
-            <a :href="item.url">
+            <a :href="item.url" target="_blank">
               <img :src="item.imgSrc"/>
             </a>
           </div>
@@ -38,7 +38,7 @@
           data-group-title="~（￣▽￣）~ 摸鱼"
         >
           <div v-for="item in moyu" :key='item.url' data-role="tile" class="fg-white" :data-size="item.size">
-            <a :href="item.url">
+            <a :href="item.url" target="_blank">
               <img :src="item.imgSrc"/>
             </a>
           </div>
