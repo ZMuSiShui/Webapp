@@ -9,11 +9,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "metro4": "^4.4.3",
     "sass": "^1.26.2",
     "sass-loader": "^8.0.2",
-    "vue": "^2.6.10",
-    "vue-fullpage.js": "^0.1.2"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.0",
