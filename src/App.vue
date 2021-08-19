@@ -1,52 +1,33 @@
-<template class="app">
-  <Welcome style="z-index: -1" />
+<template>
+  <div id="app">
+    <Header />
+    <Container/>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import Welcome from "./components/Welcome.vue";
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import Container from './components/Container.vue'
 
 export default {
-  name: "App",
+  name: 'app',
   components: {
-    Welcome,
-  },
-  data() {
-    return {
-      leaveTitle: "ヾ(￣▽￣)Bye~Bye~",
-      returnTitle: "~(～￣▽￣)～",
-    };
-  },
-  mounted() {
-    this.checkTitle();
+    Header,
+    Container,
+    Footer
   },
   methods: {
-    checkTitle() {
-      const OriginTitle = document.title;
-      let titleTime;
-      let that = this;
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-          document.title = that.leaveTitle;
-          clearTimeout(titleTime);
-        } else {
-          document.title = that.returnTitle;
-          titleTime = setTimeout(function () {
-            document.title = OriginTitle;
-          }, 2000);
-        }
-      });
-    },
-  },
-};
+    is_mobile: function() {
+      if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+        document.getElementsById("page-header")[0].className="is-mobile"
+        document.getElementsByTagName("footer")[0].className="is-mobile"
+      }
+    }
+  }
+}
 </script>
 
-<style >
-html,
-body,
-div {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+<style>
 </style>

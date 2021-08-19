@@ -1,5 +1,5 @@
 {
-  "name": "webapp",
+  "name": "homepage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "sass": "^1.26.2",
-    "sass-loader": "^8.0.2",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-fontawesome": "0.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.0",
@@ -20,7 +19,6 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-cli-plugin-fullpage": "^1.0.2",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
