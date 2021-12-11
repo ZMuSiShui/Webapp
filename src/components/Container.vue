@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div v-for="i in container" :key="i" class="container">
+    <div v-for="(i, index) in container" :key="index" class="container">
       <div class="section">
         <h3 class="grid-title">
           <span>{{ i.grid_title }}</span>
         </h3>
         <p class="grid-title-describe">{{ i.grid_title_describe }}</p>
         <div class="item-box">
-          <div v-for="j in i.items" :key="j" class="item">
+          <div v-for="(j, index) in i.items" :key="index" class="item">
             <a :href="j.href" target="_blank">
               <article :class="[`item-color ${j.color_class}`]">
                 <div class="item-logo">
@@ -30,26 +30,77 @@ export default {
   name: "Container",
   data() {
     return {
-      container: undefined
+      container: {
+        product0: {
+          grid_title: "Me / 我的原创",
+          grid_title_describe: "我的原创作品合集",
+          items: {
+            theme0: {
+              title: "JieのBlog",
+              describe: "我的 Blog，学习记录",
+              href: "https://blog.zhangjie.me",
+              item_logo: "blog",
+              color_class: "color1",
+            },
+            theme1: {
+              title: "Github",
+              describe: "Github 文件加速下载",
+              href: "https://github.zmusishui.workers.dev/",
+              item_logo: "github",
+              color_class: "color2",
+            },
+            theme2: {
+              title: "WiKi",
+              describe: "WiKi 百科代理访问",
+              href: "https://wiki.zmusishui.workers.dev/",
+              item_logo: "wikipedia-w",
+              color_class: "color3",
+            },
+            theme3: {
+              title: "IPs Search",
+              describe: "简单好用的 IP 查询工具",
+              href: "http://cn.zhangjie.me:88",
+              item_logo: "map-marker-alt",
+              color_class: "color4",
+            },
+          },
+        },
+        product1: {
+          grid_title: "Website / 常用网站",
+          grid_title_describe: "摸鱼向OoO常用网站",
+          items: {
+            theme0: {
+              title: "Json Format",
+              describe: "Json 格式化工具",
+              href: "https://www.json.cn/",
+              item_logo: "tools",
+              color_class: "color3",
+            },
+            theme1: {
+              title: "哔哩哔哩",
+              describe: "哔哩哔哩 (゜-゜)つロ 干杯~",
+              href: "https://www.bilibili.com",
+              item_logo: "tv",
+              color_class: "color4",
+            },
+            theme2: {
+              title: "Youtube Music",
+              describe: "最全曲库的音乐网站",
+              href: "https://music.youtube.com",
+              item_logo: "youtube",
+              color_class: "color2",
+            },
+            theme3: {
+              title: "3DM Games",
+              describe: "3DM游戏资讯网站",
+              href: "https://www.3dmgame.com/",
+              item_logo: "gamepad",
+              color_class: "color6",
+            },
+          },
+        },
+      },
     };
-  },
-  mounted() {
-    this.getContainer();
-  },
-  methods: {
-    getContainer: function () {
-      let that = this;
-      let url = "https://container.zmusishui.workers.dev";
-      fetch(url, {
-        method: "GET",
-      })
-        .then((res) => res.json())
-        // eslint-disable-next-line
-        .catch((error) => console.error("Error:", error))
-        .then((response) => {
-          that.container = response.data;
-        });
-    },
   },
 };
 </script>
